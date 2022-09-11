@@ -1,19 +1,19 @@
 # How to Install Unity In Windows
 
-Go to https://unity3d.com/get-unity/download and click on the button "Choose your Unity + download"
+*Go to https://unity3d.com/get-unity/download and click on the button "Choose your Unity + download"
 ![image](https://user-images.githubusercontent.com/7041610/189507188-4bc13529-1d30-4af0-8988-9904443625f2.png)
-. From there click on Student and hobbyist.
-This will take to https://store.unity.com/. From there click on Student and hobbyist.
-Then click Sign Up under Student Option. 
-Click on "Get Started" under Post-secondary students and give the your email address related to your educational institution.
-Check your email provided to Unity for a confirmation email and click on the link to confirm email which will take you to the sign up page.
-Signup with a username and password.
-Then you will be provided with the download Unity link in the website.
-UnityHubSetup.exe will be downloaded.
-Run the UnityHubSetup.exe file.
+*From there click on Student and hobbyist.
+*This will take to https://store.unity.com/. From there click on Student and hobbyist.
+*Then click Sign Up under Student Option. 
+*Click on "Get Started" under Post-secondary students and give the your email address related to your educational institution.
+*Check your email provided to Unity for a confirmation email and click on the link to confirm email which will take you to the sign up page.
+*Signup with a username and password.
+*Then you will be provided with the download Unity link in the website.
+*UnityHubSetup.exe will be downloaded.
+*Run the UnityHubSetup.exe file.
 ![image](https://user-images.githubusercontent.com/7041610/189507457-485c4b6e-75de-4a6d-85db-ad449a3ae027.png)
-Click on "Yes" button when prompted to ask whether to the app can make changes to your device.
-Click on "I Agree" button to agree to the terms and conditions.
+*Click on "Yes" button when prompted to ask whether to the app can make changes to your device.
+*Click on "I Agree" button to agree to the terms and conditions.
 ![image](https://user-images.githubusercontent.com/7041610/189507517-0e1722d5-1c9a-4f39-8b9e-a0dacccf4744.png)
 Choose the installation location for Unity Hub. ANd then click on Install button.
 ![image](https://user-images.githubusercontent.com/7041610/189507541-ee4a18d2-abf3-477b-9a9b-34b79ba8adee.png)
