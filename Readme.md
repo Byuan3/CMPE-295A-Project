@@ -2,7 +2,7 @@
 
 * Go to https://unity3d.com/get-unity/download and click on the button "Choose your Unity + download"
 
-![image](https://user-images.githubusercontent.com/7041610/189507188-4bc13529-1d30-4af0-8988-9904443625f2.png)
+![image](https://user-images.githubusercontent.com/7041610/189508491-218a850f-0afb-4c84-827d-dc53d8fa972b.png
 * This will take to https://store.unity.com/. From there click on Student and hobbyist.
 * Then click Sign Up under Student Option. 
 * Click on "Get Started" under Post-secondary students and give the your email address related to your educational institution.
