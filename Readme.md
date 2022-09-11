@@ -3,13 +3,12 @@
 * Go to https://unity3d.com/get-unity/download and click on the button "Choose your Unity + download"
 
 ![image](https://user-images.githubusercontent.com/7041610/189507188-4bc13529-1d30-4af0-8988-9904443625f2.png)
-* From there click on Student and hobbyist.
 * This will take to https://store.unity.com/. From there click on Student and hobbyist.
 * Then click Sign Up under Student Option. 
 * Click on "Get Started" under Post-secondary students and give the your email address related to your educational institution.
 * Check your email provided to Unity for a confirmation email and click on the link to confirm email which will take you to the sign up page.
-* Signup with a username and password.
-* Then you will be provided with the download Unity link in the website.
+* Signup for a Unity ID with a username and password.
+* AFter signing up, you will be provided with the download Unity link in the website. Click on that link to download the exe file for installing Unity Hub.
 * UnityHubSetup.exe will be downloaded.
 * Run the UnityHubSetup.exe file.
 * Click on "Yes" button when prompted to ask whether to the app can make changes to your device.
