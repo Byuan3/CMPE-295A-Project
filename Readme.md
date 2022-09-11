@@ -12,8 +12,6 @@
 * Then you will be provided with the download Unity link in the website.
 * UnityHubSetup.exe will be downloaded.
 * Run the UnityHubSetup.exe file.
-
-![image](https://user-images.githubusercontent.com/7041610/189507457-485c4b6e-75de-4a6d-85db-ad449a3ae027.png)
 * Click on "Yes" button when prompted to ask whether to the app can make changes to your device.
 * Click on "I Agree" button to agree to the terms and conditions.
 
