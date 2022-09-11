@@ -34,7 +34,7 @@
 * Install one of the Unity editors from the list provided.
 
 ![image](https://user-images.githubusercontent.com/7041610/189507887-6b802f36-bc2c-475f-b9c6-b57d2c340e9f.png)
-* After installing Unity Editor, go to Projects and Click on create New Project to create a Unity Project.
+* After installing Unity Editor, go to Projects and Click on "New Project" button to create a Unity Project.
 
 ![image](https://user-images.githubusercontent.com/7041610/189507946-01a118bd-dba4-4d20-88a5-4e78e4bc4bc6.png)
 
