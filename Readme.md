@@ -4,15 +4,18 @@
 
 ![image](https://user-images.githubusercontent.com/7041610/189508491-218a850f-0afb-4c84-827d-dc53d8fa972b.png)
 * This will take to https://store.unity.com/. From there click on Student and hobbyist.
-* Then click Sign Up under Student Option. 
+* Then click Sign Up under "Student and Hobbyist" tab.
+
+![image](https://user-images.githubusercontent.com/7041610/189508564-70671ecc-1770-4b76-8b9c-0e095293ee04.png)
+
 * Click on "Get Started" under Post-secondary students and give the your email address related to your educational institution.
-* Check your email provided to Unity for a confirmation email and click on the link to confirm email which will take you to the sign up page.
+* Check your email for a confirmation email from Unity and click on the link to confirm email which will take you to the sign up page.
 * Signup for a Unity ID with a username and password.
-* AFter signing up, you will be provided with the download Unity link in the website. Click on that link to download the exe file for installing Unity Hub.
-* UnityHubSetup.exe will be downloaded.
+* After signing up, you will be provided with the download Unity link in the website. Click on that link to download the exe file for installing Unity Hub.
+* UnityHubSetup.exe file will be downloaded.
 * Run the UnityHubSetup.exe file.
-* Click on "Yes" button when prompted to ask whether to the app can make changes to your device.
-* Click on "I Agree" button to agree to the terms and conditions.
+* Click on "Yes" button when prompted to ask whether the app can make changes to your device.
+* Then click on "I Agree" button to agree to the terms and conditions.
 
 ![image](https://user-images.githubusercontent.com/7041610/189508268-1273a88a-77a1-45b9-a036-2401976aa1f2.png)
 
