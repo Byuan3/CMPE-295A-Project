@@ -17,8 +17,9 @@
 * Click on "Yes" button when prompted to ask whether to the app can make changes to your device.
 * Click on "I Agree" button to agree to the terms and conditions.
 
-![image](https://user-images.githubusercontent.com/7041610/189507517-0e1722d5-1c9a-4f39-8b9e-a0dacccf4744.png)
-* Choose the installation location for Unity Hub. ANd then click on Install button.
+![image](https://user-images.githubusercontent.com/7041610/189508268-1273a88a-77a1-45b9-a036-2401976aa1f2.png)
+
+* Choose the installation location for Unity Hub. And then click on Install button.
 
 ![image](https://user-images.githubusercontent.com/7041610/189507541-ee4a18d2-abf3-477b-9a9b-34b79ba8adee.png)
 * Click on "Finished" button once installation is completed.
