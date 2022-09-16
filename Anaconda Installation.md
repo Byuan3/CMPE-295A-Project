@@ -8,5 +8,5 @@
  #### 7. Installing Anaconda requires choosing a directory path without any spaces or Unicode characters.
  #### 8. Decide whether to set Anaconda as your default Python or add it to your PATH environment variable.
  #### 9. Press Install. Click Show Details to view the packages that Anaconda is installing and continue.
- #### 10.The "Thanks for installing Anaconda" dialog box will appear following a successful installation.
+ #### 10. The "Thanks for installing Anaconda" dialog box will appear following a successful installation.
  #### 11. Then click finish button.
