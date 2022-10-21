@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: helloworldtokenpackage
+Version: 0.0.5
+Summary: This is a simple HelloWorld token package to connect to Unity.
+Home-page: https://github.com/Byuan3/CMPE-295A-Project
+Author: SJSU-CMPE295-Team3-Prof. Harry Li
+Author-email: test@test.com
+License: Apache License 2.0
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+This is a simple Hello World Token Program for passing parameters to Unity.
+

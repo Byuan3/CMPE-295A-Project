@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+helloWorldTockenPackage/__init__.py
+helloworldtockenpackage/__init__.py
+helloworldtockenpackage/helloworld.py
+helloworldtokenpackage.egg-info/PKG-INFO
+helloworldtokenpackage.egg-info/SOURCES.txt
+helloworldtokenpackage.egg-info/dependency_links.txt
+helloworldtokenpackage.egg-info/top_level.txt
