@@ -19,7 +19,6 @@ DESCRIPTION = 'This is a simple HelloWorld token package to connect to Unity.'
 LONG_DESCRIPTION = (HERE / "README.md").read_text()
 LONG_DESC_TYPE = "text/markdown"
 INSTALL_REQUIRES = [
-      ''
 ]
 setup(name=PACKAGE_NAME,
       version=VERSION,

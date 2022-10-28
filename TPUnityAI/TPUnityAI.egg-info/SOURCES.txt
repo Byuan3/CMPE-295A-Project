@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+TPUnityAI/__init__.py
+TPUnityAI/calculation.py
+TPUnityAI/communicator.py
+TPUnityAI.egg-info/PKG-INFO
+TPUnityAI.egg-info/SOURCES.txt
+TPUnityAI.egg-info/dependency_links.txt
+TPUnityAI.egg-info/requires.txt
+TPUnityAI.egg-info/top_level.txt

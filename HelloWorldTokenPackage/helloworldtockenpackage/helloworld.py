@@ -5,7 +5,9 @@
 #
 # -----------------------------------------------------------
 
-import socket;
+import socket
+
+
 def printhelloworld():
     """
         A user program can call this function using helloworldpackage.
@@ -20,6 +22,7 @@ def printhelloname(name):
         Return the variable passed with the string 'Hello'
     """
     return "Hello " + name
+
 
 def send_message(message):
     host = socket.gethostname()
