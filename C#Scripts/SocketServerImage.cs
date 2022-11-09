@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static System.Net.Sockets.Socket;
@@ -44,7 +45,8 @@ public class SocketServerImage : MonoBehaviour
             listener.Bind(localEndPoint);
             listener.Listen(10);
 
-            while (true)
+            var _continue = true;
+            while (_continue)
             {
                 print("Waiting connection ... ");
                 var clientSocket = listener.Accept();
@@ -54,10 +56,9 @@ public class SocketServerImage : MonoBehaviour
                 
                 var numByte = clientSocket.Receive(bytes);
                 data += Encoding.ASCII.GetString(bytes, 0, numByte);
-                print("Text received - > { " + data +" }");
+                print("File Size - > { " + data +" }");
                 var fileSize = int.Parse(data);
-                var message = Encoding.ASCII.GetBytes("File size received: " + fileSize);
-                clientSocket.Send(message);
+                
 
                 bytes = new byte[fileSize];
                 numByte = clientSocket.Receive(bytes);
@@ -66,12 +67,13 @@ public class SocketServerImage : MonoBehaviour
 
                 data = null;
                 data += Encoding.ASCII.GetString(bytes, 0, numByte);
-                print("Text received - > { " + data +" }");
                 
-                message = Encoding.ASCII.GetBytes("File data received: " + numByte);
+                var message = Encoding.ASCII.GetBytes("Bytes received: " + numByte);
                 clientSocket.Send(message);
                 clientSocket.Shutdown(SocketShutdown.Both);
                 clientSocket.Close();
+                
+                _continue = false;
             }
             
         }
