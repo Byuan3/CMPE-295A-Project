@@ -1,7 +1,7 @@
 import pathlib
 from setuptools import setup, find_packages
 HERE = pathlib.Path(__file__).parent
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 PACKAGE_NAME = 'TPUnityAI'
 AUTHOR = 'Team3'
 AUTHOR_EMAIL = 'test@test.com'

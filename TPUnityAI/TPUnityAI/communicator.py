@@ -18,9 +18,8 @@ def send_message(message):
     client_socket.close()
 
 
-def send_image(path):
+def send_image(image):
     _continue = True
-    image = cv2.imread(path)
     host = socket.gethostname()
     port = 9998
 
@@ -36,19 +35,19 @@ def send_image(path):
             fileSize = len(byteString)
             client.send(str(fileSize).encode())
 
-            sizeConfirmation = client.recv(1024)
-
             totalSent = 0
             while totalSent < fileSize:
                 totalSent += client.send(byteString[totalSent:])
                 print("Send " + str(totalSent) + " Bytes")
 
             _continue = False
-            print(str(fileSize), str(totalSent), sizeConfirmation.decode('utf-8'))
+            sizeConfirmation = client.recv(1024)
+            print(sizeConfirmation.decode('utf-8'))
 
         except Exception as e:
             print(e)
             print("Shutting down.")
             _continue = False
 
-    print("Exited.")
+
+
