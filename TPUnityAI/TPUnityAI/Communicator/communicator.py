@@ -21,17 +21,17 @@ class Communicator:
         client = com_client.Com_client(self.host, self.py_port)
         client.close_msg()
 
-    def send_msg(self, msg):
+    def send_msg(self, msg_str):
         # Testing with Python
         # Change py_port to unity_port before testing with Unity
         client = com_client.Com_client(self.host, self.py_port)
-        client.send_msg(msg)
+        client.send_msg(msg_str)
 
-    def send_image(self, img):
+    def send_image(self, img_bytes):
         # Testing with Python
         # Change py_port to unity_port before testing with Unity
         client = com_client.Com_client(self.host, self.py_port)
-        bytesArray = bytes(cv2.imencode('.jpg', img)[1].tobytes())
+        bytesArray = bytes(cv2.imencode('.jpg', img_bytes)[1].tobytes())
         client.send_image(bytesArray)
 
     def start_server(self):
@@ -50,6 +50,11 @@ class Communicator:
             return self.server.get_last_req()
 
 
+def cut_resolution_by(image, factor):
+    imageResize = cv2.resize(image, (image.shape[1] // factor, image.shape[0] // factor))
+    return imageResize
+
+
 if __name__ == '__main__':
     c1 = Communicator()
     c1.start_server()
@@ -61,8 +66,8 @@ if __name__ == '__main__':
     print('Req msg: ' + str(msg))
     print('-----')
 
-    image = cv2.imread(r"../../../Images/unity_logo.jpg")
-    c1.send_image(image)
+    image = cv2.imread(r"../../../Images/IMG_4637.jpg")
+    c1.send_image(cut_resolution_by(image, 4))
     time.sleep(3)
     img = c1.get_server_data()
     print('Req msg: ' + str(len(img)))
@@ -71,5 +76,5 @@ if __name__ == '__main__':
     cv2.imshow('image', img_np)
     cv2.waitKey(0)
 
-    time.sleep(3)
+    time.sleep(2)
     c1.close_server()
