@@ -34,6 +34,18 @@ class Communicator:
         bytesArray = bytes(cv2.imencode('.jpg', img_bytes)[1].tobytes())
         client.send_image(bytesArray)
 
+    def imread_screen(self):
+        # Testing with Python
+        # Change py_port to unity_port before testing with Unity
+        client = com_client.Com_client(self.host, self.py_port)
+        return client.imread_screen()
+
+    def imread_file(self, filepath):
+        # Testing with Python
+        # Change py_port to unity_port before testing with Unity
+        client = com_client.Com_client(self.host, self.py_port)
+        return client.imread_file(filepath)
+
     def start_server(self):
         self.server.server_closed = False
         self.server.start_server()
@@ -66,8 +78,8 @@ if __name__ == '__main__':
     print('Req msg: ' + str(msg))
     print('-----')
 
-    image = cv2.imread(r"../../../Images/IMG_4637.jpg")
-    c1.send_image(cut_resolution_by(image, 4))
+    image = cv2.imread(r"../../../Images/unity_logo.jpg")
+    c1.send_image(image)
     time.sleep(3)
     img = c1.get_server_data()
     print('Req msg: ' + str(len(img)))

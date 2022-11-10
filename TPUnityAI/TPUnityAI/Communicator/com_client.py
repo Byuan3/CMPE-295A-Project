@@ -16,36 +16,41 @@ class Com_client:
         else:
             print('Client already connected')
 
+    def send_command(self, command):
+        self.client_socket.send(command.encode())
+        command_ack = self.client_socket.recv(1024).decode()
+        return command_ack
+
+    def close_connection(self):
+        if not self.isConnected:
+            self.client_socket.close()
+            self.isConnected = False
+
     def close_msg(self):
         if not self.isConnected:
             self.connect_to_unity()
 
-        self.client_socket.send('0.Close'.encode())
-        command_ack = self.client_socket.recv(1024).decode()
+        command_ack = self.send_command('0.Close')
 
-        self.client_socket.close()
-        self.isConnected = False
+        self.close_connection()
 
     def send_msg(self, msg):
         if not self.isConnected:
             self.connect_to_unity()
 
-        self.client_socket.send('1.Message'.encode())
-        command_ack = self.client_socket.recv(1024).decode()
+        command_ack = self.send_command('1.Message')
 
         self.client_socket.send(msg.encode())
         response = self.client_socket.recv(1024).decode()
         print('Msg Response: ' + str(response))
 
-        self.client_socket.close()
-        self.isConnected = False
+        self.close_connection()
 
     def send_image(self, img):
         if not self.isConnected:
             self.connect_to_unity()
 
-        self.client_socket.send('2.Image'.encode())
-        command_ack = self.client_socket.recv(1024).decode()
+        command_ack = self.send_command('2.Image')
 
         imageSize = len(img)
         self.client_socket.send(str(imageSize).encode())
@@ -59,5 +64,45 @@ class Com_client:
         img_ack = self.client_socket.recv(1024).decode()
         print('Image Response: ' + str(img_ack))
 
-        self.client_socket.close()
-        self.isConnected = False
+        self.close_connection()
+
+    def rec_img(self):
+        imageSize = int(self.client_socket.recv(1024).decode())
+        imageSize_ack = 'Img_Size_ACK: ' + str(imageSize) + ' Bytes'
+        self.client_socket.send(imageSize_ack.encode())
+
+        chunk_size = 1024
+        img = bytes()
+        totalReceived = 0
+        while len(img) < imageSize:
+            img += self.client_socket.recv(chunk_size)
+            totalReceived = len(img)
+            # print("Received " + str(totalReceived) + " Bytes")
+        img_ack = 'Img_ACK: ' + str(totalReceived) + ' Bytes'
+        self.client_socket.send(img_ack.encode())
+
+        return img
+
+    def imread_screen(self):
+        if not self.isConnected:
+            self.connect_to_unity()
+
+        command_ack = self.send_command('3.imread_screen')
+        img = self.rec_img()
+        self.close_connection()
+
+        return img
+
+    def imread_file(self, filePath):
+        if not self.isConnected:
+            self.connect_to_unity()
+
+        command_ack = self.send_command('4.imread_file')
+
+        self.client_socket.send(filePath.encode())
+        response = self.client_socket.recv(1024).decode()
+        img = self.rec_img()
+
+        self.close_connection()
+
+        return img

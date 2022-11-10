@@ -8,3 +8,4 @@
 .idea/workspace.xml
 TPUnityAI/TPUnityAI/Communicator/__pycache__/com_client.cpython-39.pyc
 TPUnityAI/TPUnityAI/Communicator/__pycache__/com_server.cpython-39.pyc
+.idea/other.xml
