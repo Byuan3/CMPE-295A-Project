@@ -49,7 +49,7 @@ class Com_server:
         while len(img) < imageSize:
             img += self.client_socket.recv(chunk_size)
             totalReceived = len(img)
-            print("Received " + str(totalReceived) + " Bytes")
+            # print("Received " + str(totalReceived) + " Bytes")
         img_ack = 'Img_ACK: ' + str(totalReceived) + ' Bytes'
         self.ack(img_ack)
 

@@ -55,7 +55,7 @@ class Com_client:
         totalSent = 0
         while totalSent < imageSize:
             totalSent += self.client_socket.send(img[totalSent:totalSent + chunk_size])
-            print("Send " + str(totalSent) + " Bytes")
+            # print("Send " + str(totalSent) + " Bytes")
         img_ack = self.client_socket.recv(1024).decode()
         print('Image Response: ' + str(img_ack))
 
