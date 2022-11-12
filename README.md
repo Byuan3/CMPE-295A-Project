@@ -8,7 +8,7 @@ AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
 * Shereen Punnassery - shereen.punnassery@sjsu.edu
 
 ### Documentation
-* [Google Drive Folder](https://drive.google.com/drive/u/3/folders/1rP03INmcz0v60sjqca3umEphleoIAQRd)
+* [Google Drive Folder](https://drive.google.com/drive/u/3/folders/1rP03INmcz0v60sjqca3umEphleoIAQRd) (permission needed)
 
 ### Responsibility & Contribution
 
