@@ -15,7 +15,6 @@ using System.IO;
 public class UnityServer : MonoBehaviour
 {
     // Start is called before the first frame update
-    // static bool captureScreen = false;
 
     public Renderer screenGrabRenderer;
 
@@ -31,27 +30,12 @@ public class UnityServer : MonoBehaviour
 
         // Create a new Texture2D with the width and height of the screen, and cache it for reuse
         destinationTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-
-        // Make screenGrabRenderer display the texture.
-        // screenGrabRenderer.material.mainTexture = destinationTexture;
-
-        // Add the onPostRender callback
-
-
-
         await Task.Run(() => StartServer());
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (captureScreen)
-        // {
-        //     print("Inside Update");
-        //     // ScreenCapture.CaptureScreenshot("screenshot.png");
-        // }
-
-
     }
     static void takePic()
     {
@@ -87,7 +71,7 @@ public class UnityServer : MonoBehaviour
                 byte[] bytes = destinationTexture.EncodeToPNG();
                 //         //Object.Destroy(tex);
 
-                File.WriteAllBytes("SavedScreen2.png", bytes);
+                File.WriteAllBytes("ScreenCapture.png", bytes);
 
                 imageBytes = bytes;
                 print("Bytes Length: " + imageBytes.Length);
@@ -113,29 +97,7 @@ public class UnityServer : MonoBehaviour
         Debug.Log("Finished waiting.");
     }
 
-    // IEnumerator takeScreenshot()
-    // {
-    //     if (captureScreen)
-    //     {
-    //         // ScreenCapture.CaptureScreenshot("SomeLevel.png");
-    //         // Create a texture the size of the screen, RGB24 format
-    //         yield return new WaitForEndOfFrame();
-    //         print("inside takeScreenShot");
-    //         int width = Screen.width;
-    //         int height = Screen.height;
-    //         Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
 
-    //         // Read screen contents into the texture
-    //         tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-    //         tex.Apply();
-
-    //         // Encode texture into PNG
-    //         byte[] bytes = tex.EncodeToPNG();
-    //         //Object.Destroy(tex);
-    //         File.WriteAllBytes("SavedScreen.png", bytes);
-
-    //     }
-    // }
     async private static void StartServer()
     {
         var ipHostEntry = Dns.GetHostEntry(Dns.GetHostName());
@@ -151,7 +113,7 @@ public class UnityServer : MonoBehaviour
 
             while (true)
             {
-                // print("Waiting connection ... ");
+                print("Waiting connection ... ");
                 var clientSocket = listener.Accept();
 
                 var bytes = new byte[1024];
@@ -162,13 +124,11 @@ public class UnityServer : MonoBehaviour
 
                 data += Encoding.ASCII.GetString(bytes, 0, numByte);
 
-                // print("Text received - > { " + data + " }");
-                // ScreenCapture.CaptureScreenshot("SomeLevel.png");
+                print("Text received - > { " + data + " }");
+
                 var message = Encoding.ASCII.GetBytes("Test Server");
 
-                // captureImage();
-
-                // clientSocket.Send(message);
+                clientSocket.Send(message);
 
                 data = null;
 
@@ -180,15 +140,7 @@ public class UnityServer : MonoBehaviour
                     captureScreen = true;
                     takePic();
                     await WaitOneSecondAsync();
-                    // new WaitForSeconds(5);
-                    new WaitForSecondsRealtime(5);
-                    //if (sendImage == true)
                     print("Image bytes Length again: " + imageBytes.Length);
-                    // var message1 = Encoding.ASCII.GetString(imageBytes);
-                    // var imageLength = Encoding.Default.GetByteCount(imageBytes);
-                    //  var imageLength2 = Encoding.ASCII.GetBytes(imageBytes.Length);
-
-
 
                     //Send Filesize to client
 
@@ -228,6 +180,60 @@ public class UnityServer : MonoBehaviour
                             print("i: " + (fileSize - last) + " ,j-last: " + last);
                         }
                     }
+
+                    // IMAGE FILE //
+
+                    data = null;
+                    numByte = clientSocket.Receive(bytes);
+                    data += Encoding.ASCII.GetString(bytes, 0, numByte);
+
+                    print("FIle asked for is: " + data);
+                    byte[] fileBytes = null;
+                    try
+                    {
+                        fileBytes = File.ReadAllBytes(data);
+                    }
+                    catch (Exception e)
+                    {
+                        print(e);
+                    }
+
+                    // if (!(string.IsNullOrEmpty(fileLength)))
+                    if (fileBytes != null)
+                    {
+                        print("FIleBytes of asked file: " + fileBytes);
+                        string fileLength = (fileBytes.Length).ToString();
+                        print("FIlesize of asked file: " + fileLength);
+                        clientSocket.Send(Encoding.ASCII.GetBytes(fileLength));
+
+                        var n = fileBytes.Length / 1024;
+                        var last = fileBytes.Length % 1024;
+                        var j = 1;
+                        var i = 0;
+                        for (i = 0, j = 1; j <= n; j++, i += 1024)
+                        {
+                            clientSocket.Send(fileBytes, i, 1024, SocketFlags.None);
+                            print("sent: " + (i + 1024) + " ,j: " + j);
+
+                        }
+                        print("In between");
+
+                        if (last != 0)
+                        {
+                            var lastOffset = (fileBytes.Length) - last;
+                            clientSocket.Send(fileBytes, lastOffset, last, SocketFlags.None);
+                            print("i: " + lastOffset + " ,j-last: " + last);
+                        }
+                    }
+                    else
+                    {
+                        var messageSent = Encoding.ASCII.GetBytes("File Not Found.");
+                        clientSocket.Send(messageSent);
+                    }
+
+
+                    //clientSocket.send();
+
 
 
 
