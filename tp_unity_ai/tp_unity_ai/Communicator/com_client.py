@@ -69,7 +69,9 @@ class Com_client:
     def rec_img(self):
         imageSize = int(self.client_socket.recv(1024).decode())
         imageSize_ack = 'Img_Size_ACK: ' + str(imageSize) + ' Bytes'
-        self.client_socket.send(imageSize_ack.encode())
+        print(imageSize)
+        print(imageSize_ack)
+        self.client_socket.send(str(imageSize).encode())
 
         chunk_size = 1024
         img = bytes()
@@ -88,6 +90,7 @@ class Com_client:
             self.connect_to_unity()
 
         command_ack = self.send_command('3.imread_screen')
+        print(command_ack)
         img = self.rec_img()
         self.close_connection()
 
@@ -100,7 +103,6 @@ class Com_client:
         command_ack = self.send_command('4.imread_file')
 
         self.client_socket.send(filePath.encode())
-        response = self.client_socket.recv(1024).decode()
         img = self.rec_img()
 
         self.close_connection()
