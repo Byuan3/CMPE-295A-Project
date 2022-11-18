@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 
-class Com_server:
+class ComServer:
     def __init__(self, host=socket.gethostname(), py_port=10101, unity_port=20202):
         self.host = host
         self.py_port = py_port
@@ -39,18 +39,18 @@ class Com_server:
         return msg
 
     def rec_img(self):
-        imageSize = int(self.client_socket.recv(1024).decode())
-        imageSize_ack = 'Img_Size_ACK: ' + str(imageSize) + ' Bytes'
-        self.ack(imageSize_ack)
+        image_size = int(self.client_socket.recv(1024).decode())
+        image_size_ack = 'Img_Size_ACK: ' + str(image_size) + ' Bytes'
+        self.ack(image_size_ack)
 
         chunk_size = 1024
         img = bytes()
-        totalReceived = 0
-        while len(img) < imageSize:
+        total_received = 0
+        while len(img) < image_size:
             img += self.client_socket.recv(chunk_size)
-            totalReceived = len(img)
-            # print("Received " + str(totalReceived) + " Bytes")
-        img_ack = 'Img_ACK: ' + str(totalReceived) + ' Bytes'
+            total_received = len(img)
+            # print("Received " + str(total_received) + " Bytes")
+        img_ack = 'Img_ACK: ' + str(total_received) + ' Bytes'
         self.ack(img_ack)
 
         self.client_socket.close()

@@ -25,8 +25,8 @@ def imread_screen():
     return c.imread_screen()
 
 
-def imread_file(filepath):
-    return c.imread_file(filepath)
+def imread_file(file_path):
+    return c.imread_file(file_path)
 
 
 def get_data_pipeline():

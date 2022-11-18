@@ -1,17 +1,17 @@
 import socket
 
 
-class Com_client:
+class ComClient:
     def __init__(self, host=socket.gethostname(), unity_port=20202):
         self.host = host
         self.unity_port = unity_port
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.isConnected = False
+        self.is_connected = False
 
     def connect_to_unity(self):
-        if not self.isConnected:
+        if not self.is_connected:
             self.client_socket.connect((self.host, self.unity_port))
-            self.isConnected = True
+            self.is_connected = True
             print('Client connected')
         else:
             print('Client already connected')
@@ -22,12 +22,12 @@ class Com_client:
         return command_ack
 
     def close_connection(self):
-        if not self.isConnected:
+        if not self.is_connected:
             self.client_socket.close()
-            self.isConnected = False
+            self.is_connected = False
 
     def close_msg(self):
-        if not self.isConnected:
+        if not self.is_connected:
             self.connect_to_unity()
 
         command_ack = self.send_command('0.Close')
@@ -35,7 +35,7 @@ class Com_client:
         self.close_connection()
 
     def send_msg(self, msg):
-        if not self.isConnected:
+        if not self.is_connected:
             self.connect_to_unity()
 
         command_ack = self.send_command('1.Message')
@@ -47,18 +47,18 @@ class Com_client:
         self.close_connection()
 
     def send_image(self, img):
-        if not self.isConnected:
+        if not self.is_connected:
             self.connect_to_unity()
 
         command_ack = self.send_command('2.Image')
 
-        imageSize = len(img)
-        self.client_socket.send(str(imageSize).encode())
+        image_size = len(img)
+        self.client_socket.send(str(image_size).encode())
         imageSize_ack = self.client_socket.recv(1024).decode()
 
         chunk_size = 1024
         totalSent = 0
-        while totalSent < imageSize:
+        while totalSent < image_size:
             totalSent += self.client_socket.send(img[totalSent:totalSent + chunk_size])
             # print("Send " + str(totalSent) + " Bytes")
         img_ack = self.client_socket.recv(1024).decode()
@@ -67,26 +67,26 @@ class Com_client:
         self.close_connection()
 
     def rec_img(self):
-        imageSize = int(self.client_socket.recv(1024).decode())
-        imageSize_ack = 'Img_Size_ACK: ' + str(imageSize) + ' Bytes'
-        print(imageSize)
+        image_size = int(self.client_socket.recv(1024).decode())
+        imageSize_ack = 'Img_Size_ACK: ' + str(image_size) + ' Bytes'
+        print(image_size)
         print(imageSize_ack)
-        self.client_socket.send(str(imageSize).encode())
+        self.client_socket.send(str(image_size).encode())
 
         chunk_size = 1024
         img = bytes()
-        totalReceived = 0
-        while len(img) < imageSize:
+        total_received = 0
+        while len(img) < image_size:
             img += self.client_socket.recv(chunk_size)
-            totalReceived = len(img)
+            total_received = len(img)
             # print("Received " + str(totalReceived) + " Bytes")
-        img_ack = 'Img_ACK: ' + str(totalReceived) + ' Bytes'
+        img_ack = 'Img_ACK: ' + str(total_received) + ' Bytes'
         self.client_socket.send(img_ack.encode())
 
         return img
 
     def imread_screen(self):
-        if not self.isConnected:
+        if not self.is_connected:
             self.connect_to_unity()
 
         command_ack = self.send_command('3.imread_screen')
@@ -97,7 +97,7 @@ class Com_client:
         return img
 
     def imread_file(self, filePath):
-        if not self.isConnected:
+        if not self.is_connected:
             self.connect_to_unity()
 
         command_ack = self.send_command('4.imread_file')
