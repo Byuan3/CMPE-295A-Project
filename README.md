@@ -17,6 +17,7 @@ Responsibility  | Owner
 ------------- | -------------
 Design  | Boteng Yuan
 Python  | Boteng Yuan
-Unity  | Manish Mapakshi, Sai Sravani Chalasani, Shereen Punnassery
+Unity  | Manish Mapakshi, Shereen Punnassery
+Demos | Sai Sravani Chalasani
 
 * [Individual Contribution List](https://docs.google.com/document/d/1KYUA3KTBQXJIp6txP6cPjn7L9hroA8AfvhDAxP6ToHw/edit)
