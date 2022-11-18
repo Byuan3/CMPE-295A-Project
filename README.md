@@ -9,7 +9,7 @@ AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
 
 ### Documentation
 * [Documentaion Google Drive Folder](https://drive.google.com/drive/u/3/folders/1rP03INmcz0v60sjqca3umEphleoIAQRd)
-  * [Founction Definition Doc](https://docs.google.com/document/d/1U4_ov3h36BZE5mAOXhLUBwPS77ORlPS9IoK6uTg8Y3U/edit?usp=sharing)
+  * [Function Definition Doc](https://docs.google.com/document/d/1U4_ov3h36BZE5mAOXhLUBwPS77ORlPS9IoK6uTg8Y3U/edit?usp=sharing)
 
 ### Responsibility & Contributions
 
