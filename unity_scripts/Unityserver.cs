@@ -12,7 +12,7 @@ using UnityEngine.UI;
 using static System.Net.Sockets.Socket;
 using System.IO;
 
-public class Unityserver : MonoBehaviour
+public class UnityServer : MonoBehaviour
 {
 
     public static bool isConnected = false;
@@ -160,7 +160,7 @@ public class Unityserver : MonoBehaviour
 
             var ipHostEntry = Dns.GetHostEntry(Dns.GetHostName());
             var ipAddress = ipHostEntry.AddressList[0];
-            var localEndPoint = new IPEndPoint(ipAddress, 20203);
+            var localEndPoint = new IPEndPoint(ipAddress, 20202);
             print("Ip " + getIPAddress().ToString());
             //Security.PrefetchSocketPolicy(ipAddress.AddressFamily.ToString(), 10100);
             var listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
@@ -184,6 +184,7 @@ public class Unityserver : MonoBehaviour
                     data += Encoding.ASCII.GetString(bytes, 0, numBytes);
 
                     print("Command received - > { " + data + " }");
+                    serverSocket.Send(Encoding.ASCII.GetBytes(data));
 
 
                     isConnected = true;
