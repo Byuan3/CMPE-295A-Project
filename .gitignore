@@ -45,3 +45,4 @@ tp_unity_ai/TPUnityAI.egg-info/PKG-INFO
 tp_unity_ai/TPUnityAI.egg-info/requires.txt
 tp_unity_ai/TPUnityAI.egg-info/SOURCES.txt
 tp_unity_ai/TPUnityAI.egg-info/top_level.txt
+*.pyc
