@@ -46,3 +46,8 @@ tp_unity_ai/TPUnityAI.egg-info/requires.txt
 tp_unity_ai/TPUnityAI.egg-info/SOURCES.txt
 tp_unity_ai/TPUnityAI.egg-info/top_level.txt
 *.pyc
+test_program/.idea/.idea.test_program.dir/.idea/encodings.xml
+test_program/.idea/.idea.test_program.dir/.idea/indexLayout.xml
+test_program/.idea/.idea.test_program.dir/.idea/projectSettingsUpdater.xml
+test_program/.idea/.idea.test_program.dir/.idea/vcs.xml
+test_program/.idea/.idea.test_program.dir/.idea/workspace.xml
