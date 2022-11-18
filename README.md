@@ -13,9 +13,10 @@ AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
 
 ### Responsibility & Contributions
 
-Responsibility  | Name
+Responsibility  | Owner
 ------------- | -------------
-Python  | Boteng
-Unity  | Manish, Shereen, Sai
+Design  | Boteng Yuan
+Python  | Boteng Yuan
+Unity  | Manish Mapakshi, Sai Sravani Chalasani, Shereen Punnassery
 
 * [Individual Contribution List](https://docs.google.com/document/d/1KYUA3KTBQXJIp6txP6cPjn7L9hroA8AfvhDAxP6ToHw/edit)
