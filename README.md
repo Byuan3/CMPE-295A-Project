@@ -15,7 +15,7 @@ AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
 
 Responsibility  | Owner
 ------------- | -------------
-Design  | Boteng Yuan
+Design  | Boteng Yuan, Manish Mapakshi, Shereen Punnassery, Sai Sravani Chalasani
 Python  | Boteng Yuan
 Unity  | Manish Mapakshi, Shereen Punnassery
 Demos | Sai Sravani Chalasani
