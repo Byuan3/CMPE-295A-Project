@@ -3,8 +3,8 @@ import cv2
 
 
 def interface():
-    tp.init_communicator()
-    img = tp.imread_screen()
+    tp.commn.init()
+    img = tp.commn.imread_screen()
     cv2.imshow('image', img)
     cv2.waitKey(0)
 
