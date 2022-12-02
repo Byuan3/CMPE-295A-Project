@@ -53,8 +53,3 @@ class Communicator:
     def get_server_data(self):
         if not self.server.server_closed:
             return self.server.get_last_req()
-
-
-def cut_resolution_by(image, factor):
-    imageResize = cv2.resize(image, (image.shape[1] // factor, image.shape[0] // factor))
-    return imageResize

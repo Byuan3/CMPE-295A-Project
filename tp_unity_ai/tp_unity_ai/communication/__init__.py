@@ -4,12 +4,12 @@ from .communicator import Communicator
 c = Communicator()
 
 
-def init_communicator(host=socket.gethostname(), py_port=10101, unity_port=20202):
+def init(host=socket.gethostname(), py_port=10101, unity_port=20202):
     global c
     c = Communicator(host, py_port, unity_port)
 
 
-def start_listening():
+def listen():
     c.start_server()
 
 
