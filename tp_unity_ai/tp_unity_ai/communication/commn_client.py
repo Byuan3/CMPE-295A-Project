@@ -1,7 +1,7 @@
 import socket
 
 
-class ComClient:
+class CommnClient:
     def __init__(self, host=socket.gethostname(), unity_port=20202):
         self.host = host
         self.unity_port = unity_port

@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 
-class ComServer:
+class CommnServer:
     def __init__(self, host=socket.gethostname(), py_port=10101, unity_port=20202):
         self.host = host
         self.py_port = py_port
@@ -81,4 +81,8 @@ class ComServer:
     def get_last_req(self):
         return self.data[-1]
 
+    def close(self):
+        if not self.server_closed:
+            self.server_socket.close()
+            self.server_closed = True
 
