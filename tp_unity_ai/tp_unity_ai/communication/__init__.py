@@ -8,12 +8,12 @@ commn_env_port = 20202
 simulation_env = 'unity'
 
 
-def init(init_host=socket.gethostname(), init_py_port=10101, init_env_port=20202, init_env='unity'):
+def init(host=commn_host, server_port=commn_server_port, env_port=commn_env_port, env=simulation_env):
     global communicator, commn_host, commn_server_port, commn_env_port, simulation_env
-    commn_host = init_host
-    commn_server_port = init_py_port
-    commn_env_port = init_env_port
-    simulation_env = init_env
+    commn_host = host
+    commn_server_port = server_port
+    commn_env_port = env_port
+    simulation_env = env
     communicator = Communicator(commn_host, commn_server_port, commn_env_port, simulation_env)
 
 
