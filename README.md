@@ -1,4 +1,4 @@
-# CMPE-295A-Project
+# AI Unity Simulation Token Package
 AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
 ### Team Member
 
