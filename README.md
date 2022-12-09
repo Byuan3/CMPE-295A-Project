@@ -1,11 +1,15 @@
-# AI Unity Simulation Token Package
-AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
-### Team Member
+# AI and Augmented Reality Simulation Tool Kit for Autonomous Systems
+
+### Team Members
 
 * Boteng Yuan - boteng.yuan@sjsu.edu
 * Manish Mapakshi - manish.mapakshi@sjsu.edu
 * Sai Sravani Chalasani - saisravani.chalasani@sjsu.edu
 * Shereen Punnassery - shereen.punnassery@sjsu.edu
+
+### Packege Architecture
+![image](https://user-images.githubusercontent.com/7041610/206769952-4b866da3-a221-4e53-b4ec-31cd931749b0.png)
+
 
 ### Documentation
 * [Documentaion Google Drive Folder](https://drive.google.com/drive/u/3/folders/1rP03INmcz0v60sjqca3umEphleoIAQRd)
