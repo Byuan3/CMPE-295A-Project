@@ -7,7 +7,7 @@
 * Sai Sravani Chalasani - saisravani.chalasani@sjsu.edu
 * Shereen Punnassery - shereen.punnassery@sjsu.edu
 
-### Packege Architecture
+### Package Architecture
 ![image](https://user-images.githubusercontent.com/7041610/206770338-388b7984-384b-479b-833f-95b17bce5696.png)
 
 
