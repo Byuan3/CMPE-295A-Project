@@ -7,9 +7,22 @@
 * Sai Sravani Chalasani - saisravani.chalasani@sjsu.edu
 * Shereen Punnassery - shereen.punnassery@sjsu.edu
 
-### Package Architecture
-![image](https://user-images.githubusercontent.com/7041610/206770338-388b7984-384b-479b-833f-95b17bce5696.png)
+### Architecture
+![architecture](https://user-images.githubusercontent.com/38079632/206777161-83f55d80-b80a-45e9-82c1-a31532493adf.png)
 
+<pre>
+tp_unity_ai
+├── calculation
+│   └── calculation.py
+├── communication
+│   ├── commn_client.py
+│   ├── commn_server.py
+│   └── communicator.py
+├── computer_vision
+└── control
+</pre>
+
+### Key Features
 
 ### Documentation
 * [Documentaion Google Drive Folder](https://drive.google.com/drive/u/3/folders/1rP03INmcz0v60sjqca3umEphleoIAQRd)
