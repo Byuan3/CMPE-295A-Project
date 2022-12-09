@@ -13,8 +13,9 @@ tp_unity_ai
 │   ├── commn_client.py
 │   ├── commn_server.py
 │   └── communicator.py
-├── computer_vision
-└── control
+├── config
+├── cv
+└── interactiveGraphics
 </pre>
 
 ### Key Features
