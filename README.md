@@ -8,7 +8,11 @@
 * Shereen Punnassery - shereen.punnassery@sjsu.edu
 
 ### Packege Architecture
-![image](https://user-images.githubusercontent.com/7041610/206769952-4b866da3-a221-4e53-b4ec-31cd931749b0.png)
+.
+├── communicator
+├── computation
+├── cv
+└── interactiveGraphics
 
 
 ### Documentation
