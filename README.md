@@ -27,6 +27,10 @@ tp_unity_ai
 
 ## Team Info
 
+### Project Supervisor & Architect 
+
+* Harry Li - hua.li@sjsu.edu
+
 ### Team Members
 
 * Boteng Yuan - boteng.yuan@sjsu.edu
