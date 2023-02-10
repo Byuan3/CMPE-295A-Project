@@ -1,4 +1,4 @@
-from . import calculation as calc
-from . import communication as commn
-from . import control as ctrl
-from . import computer_vision as cv
+from . import compute as calc
+from . import commn as commn
+from . import interactiveGraphics as ctrl
+from . import cv as cv
