@@ -31,6 +31,10 @@ tp_unity_ai
 
 * Harry Li - hua.li@sjsu.edu
 
+### Industrial Advisor
+
+* Srba Jovic - srba.jovic@icloud.com
+
 ### Team Members
 
 * Boteng Yuan - boteng.yuan@sjsu.edu
