@@ -1,5 +1,6 @@
 import socket
 from .communicator import Communicator
+from .http import *
 
 communicator = Communicator()
 commn_host = socket.gethostname()
@@ -58,4 +59,3 @@ def get_data_pipeline():
 
 def get_recent_data():
     return communicator.get_server_data()
-
